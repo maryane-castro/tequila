@@ -911,3 +911,58 @@ Content-Length: 188003
 2024-12-14 08:14:30,292 - app_logger - INFO - File 'photo_5107186263995297481_y.jpg' uploaded successfully.
 2024-12-14 08:14:30,376 - app_logger - INFO - Prediction successful: fechada (confidence: 0.7611375451087952)
 2024-12-14 08:14:30,377 - app_logger - INFO - Response: 200 {'confidence': 0.7611375451087952, 'image_name': 'tmpcywbx4tb.jpg', 'prediction': 'fechada', 'status': 'success'}
+2024-12-14 08:28:40,017 - app_logger - INFO - Incoming request: GET http://127.0.0.1:5000/
+2024-12-14 08:28:40,018 - app_logger - DEBUG - Headers: Host: 127.0.0.1:5000
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br, zstd
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Priority: u=0, i
+
+
+2024-12-14 08:28:40,018 - app_logger - INFO - Serving index page.
+2024-12-14 08:28:40,020 - app_logger - INFO - Response: 200 None
+2024-12-14 08:28:45,515 - app_logger - INFO - Incoming request: POST http://127.0.0.1:5000/classify
+2024-12-14 08:28:45,515 - app_logger - DEBUG - Headers: Host: 127.0.0.1:5000
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0
+Accept: */*
+Accept-Language: pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br, zstd
+Referer: http://127.0.0.1:5000/
+Content-Type: multipart/form-data; boundary=---------------------------283109218219701444822176571953
+Content-Length: 289527
+Origin: http://127.0.0.1:5000
+Connection: keep-alive
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+Priority: u=0
+
+
+2024-12-14 08:28:45,515 - app_logger - DEBUG - Request contains a file upload.
+2024-12-14 08:28:45,516 - app_logger - INFO - Handling '/classify' endpoint.
+2024-12-14 08:28:45,524 - app_logger - INFO - File '1715279936313.jpg' uploaded successfully.
+2024-12-14 08:28:46,630 - app_logger - INFO - Prediction successful: fechada (confidence: 0.9997641444206238)
+2024-12-14 08:28:46,631 - app_logger - INFO - Response: 200 {'confidence': 0.9997641444206238, 'image_name': 'tmpadk4h_5r.jpg', 'prediction': 'fechada', 'status': 'success'}
+2024-12-14 08:29:23,759 - app_logger - INFO - Incoming request: POST http://127.0.0.1:5000/classify
+2024-12-14 08:29:23,759 - app_logger - DEBUG - Headers: User-Agent: PostmanRuntime/7.43.0
+Accept: */*
+Postman-Token: 3503ae85-d5e5-453c-8b8b-e2ba0313737d
+Host: 127.0.0.1:5000
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Type: multipart/form-data; boundary=--------------------------588123078728386665083059
+Content-Length: 289513
+
+
+2024-12-14 08:29:23,759 - app_logger - DEBUG - Request contains a file upload.
+2024-12-14 08:29:23,759 - app_logger - INFO - Handling '/classify' endpoint.
+2024-12-14 08:29:23,760 - app_logger - INFO - File '1715279936313.jpg' uploaded successfully.
+2024-12-14 08:29:23,841 - app_logger - INFO - Prediction successful: fechada (confidence: 0.9997641444206238)
+2024-12-14 08:29:23,841 - app_logger - INFO - Response: 200 {'confidence': 0.9997641444206238, 'image_name': 'tmp2b__5cf_.jpg', 'prediction': 'fechada', 'status': 'success'}
