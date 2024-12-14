@@ -1,8 +1,8 @@
 from flask import request, jsonify, render_template
-from run import app
 from app.model.classify_service import predict_image
 from app.utils.image_validator import validate_image
 from app.utils.logging_helper import get_logger
+from run import app
 
 # Initialize the logger
 logger = get_logger()
@@ -10,7 +10,7 @@ logger = get_logger()
 @app.before_request
 def log_request_info():
     """
-    Log básico de informações sobre a requisição recebida.
+    Basic log of information about the received request.
     """
     logger.info(f"Incoming request: {request.method} {request.url}")
     logger.debug(f"Headers: {request.headers}")
@@ -26,15 +26,14 @@ def index():
 def classify():
     logger.info("Handling '/classify' endpoint.")
     file = request.files.get('image')
-    
-    # Validate the image file
-    if not file or not validate_image(file):
+
+    if not validate_image(file):
         logger.warning("Invalid file or file format in request.")
         return jsonify({"error": "Invalid file format or no file uploaded"}), 400
 
     try:
         logger.info(f"File '{file.filename}' uploaded successfully.")
-        image_name, result, confidence = predict_image(file)  # Prediction using classifier
+        image_name, result, confidence = predict_image(file)
         response = {
             'status': 'success',
             'image_name': image_name,
@@ -47,10 +46,11 @@ def classify():
         logger.error("Error during image classification", exc_info=True)
         return jsonify({"error": str(e)}), 500
 
+
 @app.after_request
 def log_response_info(response):
     """
-    Log básico sobre a resposta enviada.
+    Basic log about the response sent.
     """
     logger.info(f"Response: {response.status_code} {response.get_json()}")
     return response
