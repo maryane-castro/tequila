@@ -1,0 +1,371 @@
+2024-12-14 00:24:55,671 - app.utils.logging_helper - INFO - Image classified successfully: Captura de tela de 2024-12-12 07-04-52.png
+2024-12-14 00:25:14,030 - app.utils.logging_helper - INFO - Image classified successfully: Captura de tela de 2024-12-12 07-04-52.png
+2024-12-14 00:25:21,494 - app.utils.logging_helper - INFO - Image classified successfully: Captura de tela de 2024-12-12 07-04-52.png
+2024-12-14 00:25:25,022 - app.utils.logging_helper - INFO - Image classified successfully: Captura de tela de 2024-12-12 07-04-52.png
+2024-12-14 00:25:30,596 - app.utils.logging_helper - INFO - Image classified successfully: Captura de tela de 2024-12-12 07-04-52.png
+2024-12-14 00:29:01,513 - app.utils.logging_helper - ERROR - Error during image classification
+Traceback (most recent call last):
+  File "/home/haise993/Documentos/GitHub/tequila/api/app/endpoints.py", line 24, in classify
+    result, confidence = predict_image(file)  # Previsão usando o classificador
+    ^^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2024-12-14 00:29:14,786 - app.utils.logging_helper - ERROR - Error during image classification
+Traceback (most recent call last):
+  File "/home/haise993/Documentos/GitHub/tequila/api/app/endpoints.py", line 24, in classify
+    result, confidence = predict_image(file)  # Previsão usando o classificador
+    ^^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2024-12-14 00:30:52,436 - app.utils.logging_helper - INFO - Image classified as fechada with confidence 0.9873891301899549
+2024-12-14 00:30:55,327 - app.utils.logging_helper - INFO - Image classified as aberta with confidence 0.8354945480766119
+2024-12-14 00:30:55,625 - app.utils.logging_helper - INFO - Image classified as aberta with confidence 0.9818171897426736
+2024-12-14 00:30:55,816 - app.utils.logging_helper - INFO - Image classified as aberta with confidence 0.7808814273999903
+2024-12-14 00:30:55,973 - app.utils.logging_helper - INFO - Image classified as fechada with confidence 0.8673087484031012
+2024-12-14 00:30:56,129 - app.utils.logging_helper - INFO - Image classified as aberta with confidence 0.9835384002092872
+2024-12-14 00:30:56,271 - app.utils.logging_helper - INFO - Image classified as aberta with confidence 0.8212346429917501
+2024-12-14 00:30:56,405 - app.utils.logging_helper - INFO - Image classified as fechada with confidence 0.8984622877786446
+2024-12-14 00:30:56,531 - app.utils.logging_helper - INFO - Image classified as aberta with confidence 0.7585715872247449
+2024-12-14 00:31:06,212 - app.utils.logging_helper - INFO - Image classified as aberta with confidence 0.8218339091362974
+2024-12-14 00:31:39,393 - app.utils.logging_helper - INFO - Image classified as fechada with confidence 0.7742932412212411
+2024-12-14 00:32:47,542 - app.utils.logging_helper - ERROR - Invalid file or file format
+2024-12-14 00:33:18,930 - app.utils.logging_helper - ERROR - Invalid file or file format
+2024-12-14 00:37:22,779 - app_logger - INFO - Incoming request: GET http://127.0.0.1:5000/
+2024-12-14 00:37:22,779 - app_logger - DEBUG - Headers: Host: 127.0.0.1:5000
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br, zstd
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Priority: u=0, i
+
+
+2024-12-14 00:37:22,780 - app_logger - INFO - Serving index page.
+2024-12-14 00:37:22,786 - app_logger - INFO - Response: 200 None
+2024-12-14 00:37:31,696 - app_logger - INFO - Incoming request: POST http://127.0.0.1:5000/classify
+2024-12-14 00:37:31,697 - app_logger - DEBUG - Headers: Host: 127.0.0.1:5000
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0
+Accept: */*
+Accept-Language: pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br, zstd
+Referer: http://127.0.0.1:5000/
+Content-Type: multipart/form-data; boundary=---------------------------20643841191137664989530252088
+Content-Length: 257900
+Origin: http://127.0.0.1:5000
+Connection: keep-alive
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+Priority: u=0
+
+
+2024-12-14 00:37:31,697 - app_logger - DEBUG - Request contains a file upload.
+2024-12-14 00:37:31,697 - app_logger - INFO - Handling '/classify' endpoint.
+2024-12-14 00:37:31,701 - app_logger - INFO - File 'Captura de tela de 2024-12-12 07-04-52.png' uploaded successfully.
+2024-12-14 00:37:31,701 - app_logger - ERROR - Error during image classification
+Traceback (most recent call last):
+  File "/home/haise993/Documentos/GitHub/tequila/api/app/endpoints.py", line 36, in classify
+    result, confidence = predict_image(file)  # Previsão usando o classificador
+    ^^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2024-12-14 00:37:31,701 - app_logger - INFO - Response: 500 {'error': 'too many values to unpack (expected 2)'}
+2024-12-14 00:38:01,832 - app_logger - INFO - Incoming request: GET http://127.0.0.1:5000/
+2024-12-14 00:38:01,832 - app_logger - DEBUG - Headers: Host: 127.0.0.1:5000
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br, zstd
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Priority: u=0, i
+
+
+2024-12-14 00:38:01,833 - app_logger - INFO - Serving index page.
+2024-12-14 00:38:01,838 - app_logger - INFO - Response: 200 None
+2024-12-14 00:38:04,626 - app_logger - INFO - Incoming request: POST http://127.0.0.1:5000/classify
+2024-12-14 00:38:04,626 - app_logger - DEBUG - Headers: Host: 127.0.0.1:5000
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0
+Accept: */*
+Accept-Language: pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br, zstd
+Referer: http://127.0.0.1:5000/
+Content-Type: multipart/form-data; boundary=---------------------------41042776965619036601915961355
+Content-Length: 257900
+Origin: http://127.0.0.1:5000
+Connection: keep-alive
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+Priority: u=0
+
+
+2024-12-14 00:38:04,626 - app_logger - DEBUG - Request contains a file upload.
+2024-12-14 00:38:04,626 - app_logger - INFO - Handling '/classify' endpoint.
+2024-12-14 00:38:04,627 - app_logger - INFO - File 'Captura de tela de 2024-12-12 07-04-52.png' uploaded successfully.
+2024-12-14 00:38:04,627 - app_logger - ERROR - Error during image classification
+Traceback (most recent call last):
+  File "/home/haise993/Documentos/GitHub/tequila/api/app/endpoints.py", line 37, in classify
+    result, confidence = predict_image(file)  # Previsão usando o classificador
+    ^^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2024-12-14 00:38:04,628 - app_logger - INFO - Response: 500 {'error': 'too many values to unpack (expected 2)'}
+2024-12-14 00:39:14,324 - app_logger - INFO - Incoming request: GET http://127.0.0.1:5000/
+2024-12-14 00:39:14,324 - app_logger - DEBUG - Headers: Host: 127.0.0.1:5000
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br, zstd
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Priority: u=0, i
+
+
+2024-12-14 00:39:14,324 - app_logger - INFO - Serving index page.
+2024-12-14 00:39:14,329 - app_logger - INFO - Response: 200 None
+2024-12-14 00:39:17,727 - app_logger - INFO - Incoming request: POST http://127.0.0.1:5000/classify
+2024-12-14 00:39:17,727 - app_logger - DEBUG - Headers: Host: 127.0.0.1:5000
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0
+Accept: */*
+Accept-Language: pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br, zstd
+Referer: http://127.0.0.1:5000/
+Content-Type: multipart/form-data; boundary=---------------------------338231353926674997953394495297
+Content-Length: 257902
+Origin: http://127.0.0.1:5000
+Connection: keep-alive
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+Priority: u=0
+
+
+2024-12-14 00:39:17,728 - app_logger - DEBUG - Request contains a file upload.
+2024-12-14 00:39:17,728 - app_logger - INFO - Handling '/classify' endpoint.
+2024-12-14 00:39:17,731 - app_logger - INFO - File 'Captura de tela de 2024-12-12 07-04-52.png' uploaded successfully.
+2024-12-14 00:39:17,732 - app_logger - INFO - Prediction successful: aberta (confidence: 0.9204619914134322)
+2024-12-14 00:39:17,732 - app_logger - INFO - Response: 200 {'confidence': 0.9204619914134322, 'image-name': 'imagem_recebida-nomepadrao.png', 'prediction': 'aberta', 'status': 'success'}
+2024-12-14 00:39:41,909 - app_logger - INFO - Incoming request: POST http://127.0.0.1:5000/classify
+2024-12-14 00:39:41,909 - app_logger - DEBUG - Headers: User-Agent: PostmanRuntime/7.43.0
+Accept: */*
+Postman-Token: c3d087ac-c1ab-496e-b635-6adf2c8d1f83
+Host: 127.0.0.1:5000
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Type: multipart/form-data; boundary=--------------------------116689572282208138326426
+Content-Length: 587
+
+
+2024-12-14 00:39:41,909 - app_logger - DEBUG - Request contains a file upload.
+2024-12-14 00:39:41,909 - app_logger - INFO - Handling '/classify' endpoint.
+2024-12-14 00:39:41,910 - app_logger - WARNING - Invalid file or file format in request.
+2024-12-14 00:39:41,910 - app_logger - INFO - Response: 400 {'error': 'Invalid file format or no file uploaded'}
+2024-12-14 00:39:52,687 - app_logger - INFO - Incoming request: POST http://127.0.0.1:5000/classify
+2024-12-14 00:39:52,687 - app_logger - DEBUG - Headers: User-Agent: PostmanRuntime/7.43.0
+Accept: */*
+Postman-Token: 9c5fbfc6-3e82-4e76-ad2c-58684d902e0a
+Host: 127.0.0.1:5000
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Type: multipart/form-data; boundary=--------------------------832797514069424074940277
+Content-Length: 257888
+
+
+2024-12-14 00:39:52,687 - app_logger - DEBUG - Request contains a file upload.
+2024-12-14 00:39:52,687 - app_logger - INFO - Handling '/classify' endpoint.
+2024-12-14 00:39:52,688 - app_logger - INFO - File 'Captura de tela de 2024-12-12 07-04-52.png' uploaded successfully.
+2024-12-14 00:39:52,688 - app_logger - INFO - Prediction successful: aberta (confidence: 0.8451373540283715)
+2024-12-14 00:39:52,688 - app_logger - INFO - Response: 200 {'confidence': 0.8451373540283715, 'image-name': 'imagem_recebida-nomepadrao.png', 'prediction': 'aberta', 'status': 'success'}
+2024-12-14 00:39:57,673 - app_logger - INFO - Incoming request: POST http://127.0.0.1:5000/classify
+2024-12-14 00:39:57,673 - app_logger - DEBUG - Headers: Host: 127.0.0.1:5000
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0
+Accept: */*
+Accept-Language: pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br, zstd
+Referer: http://127.0.0.1:5000/
+Content-Type: multipart/form-data; boundary=---------------------------259243212611625504563881997381
+Content-Length: 257902
+Origin: http://127.0.0.1:5000
+Connection: keep-alive
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+Priority: u=0
+
+
+2024-12-14 00:39:57,673 - app_logger - DEBUG - Request contains a file upload.
+2024-12-14 00:39:57,674 - app_logger - INFO - Handling '/classify' endpoint.
+2024-12-14 00:39:57,677 - app_logger - INFO - File 'Captura de tela de 2024-12-12 07-04-52.png' uploaded successfully.
+2024-12-14 00:39:57,677 - app_logger - INFO - Prediction successful: fechada (confidence: 0.796117941284445)
+2024-12-14 00:39:57,678 - app_logger - INFO - Response: 200 {'confidence': 0.796117941284445, 'image-name': 'imagem_recebida-nomepadrao.png', 'prediction': 'fechada', 'status': 'success'}
+2024-12-14 00:39:58,538 - app_logger - INFO - Incoming request: POST http://127.0.0.1:5000/classify
+2024-12-14 00:39:58,538 - app_logger - DEBUG - Headers: Host: 127.0.0.1:5000
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0
+Accept: */*
+Accept-Language: pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br, zstd
+Referer: http://127.0.0.1:5000/
+Content-Type: multipart/form-data; boundary=---------------------------77095074440467783342448779550
+Content-Length: 257900
+Origin: http://127.0.0.1:5000
+Connection: keep-alive
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+Priority: u=0
+
+
+2024-12-14 00:39:58,539 - app_logger - DEBUG - Request contains a file upload.
+2024-12-14 00:39:58,539 - app_logger - INFO - Handling '/classify' endpoint.
+2024-12-14 00:39:58,542 - app_logger - INFO - File 'Captura de tela de 2024-12-12 07-04-52.png' uploaded successfully.
+2024-12-14 00:39:58,542 - app_logger - INFO - Prediction successful: fechada (confidence: 0.985886421005215)
+2024-12-14 00:39:58,542 - app_logger - INFO - Response: 200 {'confidence': 0.985886421005215, 'image-name': 'imagem_recebida-nomepadrao.png', 'prediction': 'fechada', 'status': 'success'}
+2024-12-14 00:39:58,710 - app_logger - INFO - Incoming request: POST http://127.0.0.1:5000/classify
+2024-12-14 00:39:58,710 - app_logger - DEBUG - Headers: Host: 127.0.0.1:5000
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0
+Accept: */*
+Accept-Language: pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br, zstd
+Referer: http://127.0.0.1:5000/
+Content-Type: multipart/form-data; boundary=---------------------------25956074423607737132893068571
+Content-Length: 257900
+Origin: http://127.0.0.1:5000
+Connection: keep-alive
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+Priority: u=0
+
+
+2024-12-14 00:39:58,710 - app_logger - DEBUG - Request contains a file upload.
+2024-12-14 00:39:58,711 - app_logger - INFO - Handling '/classify' endpoint.
+2024-12-14 00:39:58,713 - app_logger - INFO - File 'Captura de tela de 2024-12-12 07-04-52.png' uploaded successfully.
+2024-12-14 00:39:58,713 - app_logger - INFO - Prediction successful: aberta (confidence: 0.9413163742250482)
+2024-12-14 00:39:58,714 - app_logger - INFO - Response: 200 {'confidence': 0.9413163742250482, 'image-name': 'imagem_recebida-nomepadrao.png', 'prediction': 'aberta', 'status': 'success'}
+2024-12-14 00:39:59,663 - app_logger - INFO - Incoming request: GET http://127.0.0.1:5000/
+2024-12-14 00:39:59,664 - app_logger - DEBUG - Headers: Host: 127.0.0.1:5000
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br, zstd
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Priority: u=0, i
+
+
+2024-12-14 00:39:59,664 - app_logger - INFO - Serving index page.
+2024-12-14 00:39:59,666 - app_logger - INFO - Response: 200 None
+2024-12-14 00:40:02,444 - app_logger - INFO - Incoming request: POST http://127.0.0.1:5000/classify
+2024-12-14 00:40:02,445 - app_logger - DEBUG - Headers: Host: 127.0.0.1:5000
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0
+Accept: */*
+Accept-Language: pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br, zstd
+Referer: http://127.0.0.1:5000/
+Content-Type: multipart/form-data; boundary=---------------------------159787822811791888032965501215
+Content-Length: 257902
+Origin: http://127.0.0.1:5000
+Connection: keep-alive
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+Priority: u=0
+
+
+2024-12-14 00:40:02,445 - app_logger - DEBUG - Request contains a file upload.
+2024-12-14 00:40:02,445 - app_logger - INFO - Handling '/classify' endpoint.
+2024-12-14 00:40:02,448 - app_logger - INFO - File 'Captura de tela de 2024-12-12 07-04-52.png' uploaded successfully.
+2024-12-14 00:40:02,448 - app_logger - INFO - Prediction successful: fechada (confidence: 0.8681727635479632)
+2024-12-14 00:40:02,449 - app_logger - INFO - Response: 200 {'confidence': 0.8681727635479632, 'image-name': 'imagem_recebida-nomepadrao.png', 'prediction': 'fechada', 'status': 'success'}
+2024-12-14 00:40:42,350 - app_logger - INFO - Incoming request: GET http://127.0.0.1:5000/
+2024-12-14 00:40:42,350 - app_logger - DEBUG - Headers: Host: 127.0.0.1:5000
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br, zstd
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Priority: u=0, i
+
+
+2024-12-14 00:40:42,351 - app_logger - INFO - Serving index page.
+2024-12-14 00:40:42,353 - app_logger - INFO - Response: 200 None
+2024-12-14 00:40:44,851 - app_logger - INFO - Incoming request: POST http://127.0.0.1:5000/classify
+2024-12-14 00:40:44,852 - app_logger - DEBUG - Headers: Host: 127.0.0.1:5000
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0
+Accept: */*
+Accept-Language: pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br, zstd
+Referer: http://127.0.0.1:5000/
+Content-Type: multipart/form-data; boundary=---------------------------9282932573305685848148155632
+Content-Length: 257898
+Origin: http://127.0.0.1:5000
+Connection: keep-alive
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+Priority: u=0
+
+
+2024-12-14 00:40:44,852 - app_logger - DEBUG - Request contains a file upload.
+2024-12-14 00:40:44,852 - app_logger - INFO - Handling '/classify' endpoint.
+2024-12-14 00:40:44,855 - app_logger - INFO - File 'Captura de tela de 2024-12-12 07-04-52.png' uploaded successfully.
+2024-12-14 00:40:44,855 - app_logger - INFO - Prediction successful: fechada (confidence: 0.9063666802790173)
+2024-12-14 00:40:44,856 - app_logger - INFO - Response: 200 {'confidence': 0.9063666802790173, 'image-name': 'imagem_recebida-nomepadrao.png', 'prediction': 'fechada', 'status': 'success'}
+2024-12-14 00:41:00,984 - app_logger - INFO - Incoming request: GET http://127.0.0.1:5000/
+2024-12-14 00:41:00,984 - app_logger - DEBUG - Headers: Host: 127.0.0.1:5000
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br, zstd
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Priority: u=0, i
+
+
+2024-12-14 00:41:00,984 - app_logger - INFO - Serving index page.
+2024-12-14 00:41:00,988 - app_logger - INFO - Response: 200 None
+2024-12-14 00:41:06,683 - app_logger - INFO - Incoming request: POST http://127.0.0.1:5000/classify
+2024-12-14 00:41:06,683 - app_logger - DEBUG - Headers: Host: 127.0.0.1:5000
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0
+Accept: */*
+Accept-Language: pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br, zstd
+Referer: http://127.0.0.1:5000/
+Content-Type: multipart/form-data; boundary=---------------------------143324299732363468651031368894
+Content-Length: 257902
+Origin: http://127.0.0.1:5000
+Connection: keep-alive
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+Priority: u=0
+
+
+2024-12-14 00:41:06,683 - app_logger - DEBUG - Request contains a file upload.
+2024-12-14 00:41:06,684 - app_logger - INFO - Handling '/classify' endpoint.
+2024-12-14 00:41:06,687 - app_logger - INFO - File 'Captura de tela de 2024-12-12 07-04-52.png' uploaded successfully.
+2024-12-14 00:41:06,688 - app_logger - INFO - Prediction successful: fechada (confidence: 0.7089397065536196)
+2024-12-14 00:41:06,688 - app_logger - INFO - Response: 200 {'confidence': 0.7089397065536196, 'image_name': 'imagem_recebida-nomepadrao.png', 'prediction': 'fechada', 'status': 'success'}
