@@ -3,7 +3,7 @@ from ultralytics import YOLO
 from PIL import Image
 import os
 
-model = YOLO("app/model/best.pt")
+model = YOLO("model/best.pt")
 
 def predict_image(image):
     try:

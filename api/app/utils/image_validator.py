@@ -1,5 +1,5 @@
 from PIL import Image
-from app.utils.logging_helper import get_logger
+from utils.logging_helper import get_logger
 
 logger = get_logger()
 

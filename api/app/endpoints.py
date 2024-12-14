@@ -1,7 +1,7 @@
 from flask import request, jsonify, render_template
-from app.model.classify_service import predict_image
-from app.utils.image_validator import validate_image
-from app.utils.logging_helper import get_logger
+from model.classify_service import predict_image
+from utils.image_validator import validate_image
+from utils.logging_helper import get_logger
 from run import app
 
 # Initialize the logger
