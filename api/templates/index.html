@@ -6,8 +6,10 @@
     <title>Upload de Imagem</title>
 </head>
 <body>
+
+
     <h1>Envie uma Imagem para Predição</h1>
-    <form id="upload-form" action="http://tequila-hegvh9f0cshnb6dq.brazilsouth-01.azurewebsites.net:8181/predict" method="POST" enctype="multipart/form-data">
+    <form id="upload-form" action="https://tequila-hegvh9f0cshnb6dq.brazilsouth-01.azurewebsites.net/predict" method="POST" enctype="multipart/form-data">
         <label for="image">Selecione uma imagem:</label>
         <input type="file" name="image" id="image" required><br><br>
         <button type="submit">Enviar</button>
@@ -26,7 +28,7 @@
             event.preventDefault();  // Evitar o envio tradicional do formulário
 
             let formData = new FormData(this);  // Coletar os dados do formulário
-            fetch('http://tequila-hegvh9f0cshnb6dq.brazilsouth-01.azurewebsites.net:8181/predict', {  // URL com a porta
+            fetch('https://tequila-hegvh9f0cshnb6dq.brazilsouth-01.azurewebsites.net/predict', {  // URL com a porta
                 method: 'POST',
                 body: formData
             })

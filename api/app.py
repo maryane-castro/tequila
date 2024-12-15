@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS
 from tempfile import NamedTemporaryFile
 from ultralytics import YOLO
 from PIL import Image
@@ -6,8 +7,15 @@ import os
 
 app = Flask(__name__)
 
+# Habilitar CORS para o aplicativo inteiro
+CORS(app)
+
 # Carregar o modelo YOLO
-model = YOLO("best.pt")  # Atualize com o caminho correto do seu modelo
+try:
+    model = YOLO("best.pt")  # Atualize com o caminho correto do seu modelo
+except Exception as e:
+    print(f"Erro ao carregar o modelo YOLO: {e}")
+    model = None
 
 def process_image(file):
     """
@@ -42,9 +50,17 @@ def predict():
 
     file = request.files['image']
 
+    # Verifica se o arquivo é uma imagem válida
+    if not file.content_type.startswith('image'):
+        return jsonify({"error": "O arquivo enviado não é uma imagem válida"}), 400
+
     try:
         # Processa a imagem e realiza a predição
         image_path = process_image(file)
+
+        if model is None:
+            return jsonify({"error": "Modelo YOLO não carregado"}), 500
+
         results = model.predict(image_path)
 
         # Processa o resultado
@@ -65,9 +81,6 @@ def predict():
             "confidence": confidence
         }
 
-        # Remove o arquivo temporário após o processamento
-        os.remove(image_path)
-
         return jsonify(response), 200
 
     except ValueError as ve:
@@ -76,5 +89,10 @@ def predict():
     except Exception as e:
         return jsonify({"error": f"Erro inesperado: {str(e)}"}), 500
 
-if __name__ == '__main__':
+    finally:
+        # Remove o arquivo temporário após o processamento
+        if os.path.exists(image_path):
+            os.remove(image_path)
+
+if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
