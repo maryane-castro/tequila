@@ -25,7 +25,7 @@ EXPOSE 5000
 ## Criando o Contêiner Docker
 
 ### 1. Construir a Imagem Docker Localmente
-Execute o seguinte comando no diretório do projeto para criar a imagem:
+Execute o seguinte comando no diretório do projeto (cd api) para criar a imagem:
 
 ```bash
 docker build -t flask-yolo-api .
