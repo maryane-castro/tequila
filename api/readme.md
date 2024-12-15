@@ -94,4 +94,8 @@ No portal Azure, pesquise por **Aplicativo Web para Contêineres** e siga as ins
 - Verifique as permissões no ACR e no recurso do aplicativo para evitar problemas de autenticação.
 - Utilize o Azure CLI para automatizar o processo sempre que possível.
 
+---
+
+## Automatização do Deploy
+O script `.sh` é baseado no ano, mês, hora, minuto e segundo. Toda vez que fizer alguma alteração no código, execute o `.sh` novamente e atualize na Azure a tag que está sendo usada. Aguarde até 10 minutos para que a atualização seja refletida no ambiente.
 
