@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload de Imagem</title>
-    <!-- Link para o arquivo CSS -->
     <link rel="stylesheet" href="../static/styles.css">
 </head>
 <body>
     <div class="container">
         <h1>Envie uma Imagem para Predição</h1>
+
+        <!-- Botão para alternar o tema -->
+        <button id="theme-toggle">🌞</button>
+
         <form id="upload-form" action="#" method="POST" enctype="multipart/form-data">
             <label for="image">Selecione uma imagem:</label>
             <input type="file" name="image" id="image" required><br><br>
@@ -29,7 +32,6 @@
         </div>
     </div>
 
-    <!-- Referência ao arquivo JavaScript -->
     <script src="../static/script.js"></script>
 </body>
 </html>
