@@ -6,13 +6,6 @@ Este guia descreve como criar e implantar uma aplicação Flask utilizando Docke
 
 ## Configurações Iniciais
 
-### Tag Padrão para Imagem Docker
-Se nenhuma tag for fornecida, o script usará a tag `latest` por padrão:
-
-```bash
-./deploy.sh
-```
-
 ### Configuração de Porta no Dockerfile
 No Dockerfile, a porta exposta está definida como `5000`. Altere-a conforme a necessidade:
 
