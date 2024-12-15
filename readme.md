@@ -10,6 +10,7 @@ Este projeto possui a seguinte estrutura de diretórios:
 │   ├── app.py            # Arquivo principal da aplicação Flask
 │   ├── best.pt           # Modelo treinado
 │   ├── Dockerfile        # Dockerfile para containerizar a aplicação
+│   ├── deploy.sh         # Automatização para atualização do projeto AZURE
 │   ├── requirements.txt  # Dependências da API
 │   └── templates         # Templates HTML
 │       └── index.html    # Página principal
@@ -62,3 +63,4 @@ Para rodar o teste de carga, execute o script `scripts/load_test.py`:
 ```bash
 python scripts/load_test.py
 ```
+
