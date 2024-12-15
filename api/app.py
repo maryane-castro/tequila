@@ -56,6 +56,9 @@ def predict():
         return jsonify({"error": "O arquivo enviado não é uma imagem válida"}), 400
 
     try:
+        # Salvar a imagem com seu nome original
+        original_filename = file.filename
+
         # Processa a imagem e realiza a predição
         image_path = process_image(file)
 
@@ -76,8 +79,9 @@ def predict():
         class_mapping = {"open": "aberta", "close": "fechada"}
         result_mapped = class_mapping.get(predicted_class, "desconhecida")
 
+        # Responde com o nome real da imagem e os dados de predição
         response = {
-            "image_name": os.path.basename(image_path),
+            "image_name": original_filename,  # Usando o nome real da imagem
             "prediction": result_mapped,
             "confidence": confidence
         }
@@ -94,6 +98,7 @@ def predict():
         # Remove o arquivo temporário após o processamento
         if os.path.exists(image_path):
             os.remove(image_path)
+
 
 if __name__ == "__main__":
     # Usar a porta da variável de ambiente ou 5000 como padrão

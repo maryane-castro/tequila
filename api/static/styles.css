@@ -1,0 +1,134 @@
+/* Definir a fonte e o fundo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container principal */
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Título */
+h1 {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo do formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Estilo do label */
+label {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Estilo do input file */
+input[type="file"] {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilo do botão */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Estilo da área de resultado */
+#result {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+/* Estilo dos resultados */
+#result strong {
+    font-size: 18px;
+    color: #333;
+}
+
+#result p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Adicionando a barra de carregamento */
+#loading {
+    width: 100%;
+    background-color: #f3f3f3;
+    height: 20px;
+    display: none;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.loading-progress {
+    width: 0%;
+    height: 100%;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    animation: loadingAnimation 2s infinite;
+}
+
+@keyframes loadingAnimation {
+    0% {
+        width: 0%;
+    }
+    50% {
+        width: 50%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+
+
+/* Responsividade para telas pequenas */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input[type="file"], button {
+        font-size: 14px;
+    }
+}
