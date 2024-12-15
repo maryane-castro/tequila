@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload de Imagem</title>
+</head>
+<body>
+    <h1>Envie uma Imagem para Predição</h1>
+    <form id="upload-form" action="http://tequila-hegvh9f0cshnb6dq.brazilsouth-01.azurewebsites.net:8181/predict" method="POST" enctype="multipart/form-data">
+        <label for="image">Selecione uma imagem:</label>
+        <input type="file" name="image" id="image" required><br><br>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <hr>
+
+    <h2>Resultado da Predição</h2>
+    <div id="result">
+        <!-- Resultado da predição será exibido aqui -->
+    </div>
+
+    <script>
+        // Aguardar o envio do formulário
+        document.querySelector('#upload-form').addEventListener('submit', function(event) {
+            event.preventDefault();  // Evitar o envio tradicional do formulário
+
+            let formData = new FormData(this);  // Coletar os dados do formulário
+            fetch('http://tequila-hegvh9f0cshnb6dq.brazilsouth-01.azurewebsites.net:8181/predict', {  // URL com a porta
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Exibir o resultado da predição
+                if (data.error) {
+                    document.getElementById('result').innerHTML = 'Erro: ' + data.error;
+                } else {
+                    document.getElementById('result').innerHTML = `
+                        <strong>Imagem:</strong> ${data.image_name} <br>
+                        <strong>Predição:</strong> ${data.prediction} <br>
+                        <strong>Confiança:</strong> ${data.confidence} <br>
+                    `;
+                }
+            })
+            .catch(error => {
+                document.getElementById('result').innerHTML = 'Erro ao enviar a imagem: ' + error;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,1 +1,0 @@
-ssh -i ~/.ssh/azurekey adminuser@20.168.240.46 - acessar VM
