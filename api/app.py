@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 from tempfile import NamedTemporaryFile
@@ -95,4 +96,6 @@ def predict():
             os.remove(image_path)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+    # Usar a porta da variável de ambiente ou 5000 como padrão
+    port = int(os.getenv("FLASK_PORT", 5000))
+    app.run(host='0.0.0.0', port=port)

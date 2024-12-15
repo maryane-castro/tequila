@@ -6,10 +6,8 @@
     <title>Upload de Imagem</title>
 </head>
 <body>
-
-
     <h1>Envie uma Imagem para Predição</h1>
-    <form id="upload-form" action="https://tequila-hegvh9f0cshnb6dq.brazilsouth-01.azurewebsites.net/predict" method="POST" enctype="multipart/form-data">
+    <form id="upload-form" action="#" method="POST" enctype="multipart/form-data">
         <label for="image">Selecione uma imagem:</label>
         <input type="file" name="image" id="image" required><br><br>
         <button type="submit">Enviar</button>
@@ -23,18 +21,17 @@
     </div>
 
     <script>
-        // Aguardar o envio do formulário
-        document.querySelector('#upload-form').addEventListener('submit', function(event) {
-            event.preventDefault();  // Evitar o envio tradicional do formulário
+        const backendUrl = window.location.origin;  // automaticamente o domínio + a porta
 
-            let formData = new FormData(this);  // Coletar os dados do formulário
-            fetch('https://tequila-hegvh9f0cshnb6dq.brazilsouth-01.azurewebsites.net/predict', {  // URL com a porta
+        document.querySelector('#upload-form').addEventListener('submit', function(event) {
+            event.preventDefault();  
+            let formData = new FormData(this);  
+            fetch(`${backendUrl}/predict`, { 
                 method: 'POST',
                 body: formData
             })
             .then(response => response.json())
             .then(data => {
-                // Exibir o resultado da predição
                 if (data.error) {
                     document.getElementById('result').innerHTML = 'Erro: ' + data.error;
                 } else {
