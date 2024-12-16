@@ -195,12 +195,36 @@ O **Flask** é usado para criar a API e os endpoints de previsão e saúde. Quan
 
 O modelo **YOLOv5** foi treinado e salvo no arquivo `best.pt`. Ele é carregado assim que a aplicação é iniciada. O modelo faz a detecção e classificação da imagem enviada.
 
----
 
-## 💬 Contribuições
-
-Sinta-se à vontade para contribuir com melhorias, correções de bugs ou novos recursos. Basta abrir uma **issue** ou enviar um **pull request**.
+Ah, entendi! Você quer apenas adicionar informações sobre como acessar e usar a documentação Swagger sem precisar configurar o Swagger no código, já que já está implementado. Aqui está a versão atualizada do seu README com a seção sobre o Swagger:
 
 ---
 
-Este é o fluxo básico de utilização e funcionamento da API Tequila. Se você tiver dúvidas ou sugestões, não hesite em entrar em contato! 😊
+## 📡 Documentação da API com Swagger
+
+A API de Previsão com YOLOv5 oferece uma documentação interativa via **Swagger UI**, que permite explorar os endpoints e realizar requisições diretamente pela interface gráfica.
+
+### 📝 Acessando a Documentação Swagger
+
+Após iniciar o servidor Flask, você pode acessar a documentação da API através do Swagger UI no seguinte URL:
+
+```
+http://localhost:5000/apidocs
+```
+
+Isso abrirá a interface do Swagger, onde você verá todos os endpoints disponíveis na API, como:
+
+- **POST /predict**: Enviar uma imagem para fazer a previsão.
+- **GET /health**: Verificar se a API está funcionando corretamente.
+- **GET /**: Acesso à página inicial para fazer o upload da imagem.
+
+Na interface do Swagger, você poderá visualizar a descrição de cada endpoint, os parâmetros necessários (como a imagem no endpoint `/predict`), e realizar as requisições diretamente pela interface, sem necessidade de usar ferramentas como `curl`.
+
+### 🎯 Como Usar o Swagger UI
+
+1. **Abrir o navegador** e acessar [http://localhost:5000/swagger](http://localhost:5000/apidocs).
+2. **Escolher o endpoint desejado**: No Swagger UI, você verá todos os endpoints listados, como `POST /predict` ou `GET /health`.
+3. **Enviar uma requisição**: Para o endpoint `POST /predict`, por exemplo, você poderá fazer o upload de uma imagem diretamente pela interface e ver a previsão retornada em formato JSON.
+4. **Explorar mais funcionalidades**: O Swagger UI também oferece uma maneira de testar outros endpoints, ver as respostas de cada um e entender como a API funciona de maneira interativa.
+
+

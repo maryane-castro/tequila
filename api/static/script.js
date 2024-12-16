@@ -42,7 +42,7 @@ document.querySelector('#upload-form').addEventListener('submit', async function
 
     try {
         // Faz a requisição para o servidor
-        const response = await fetch(`${backendUrl}/predict`, {
+        const response = await fetch(`${backendUrl}/classify`, {
             method: 'POST',
             headers: {
                 "Authorization": "Basic " + btoa(`${username}:${password}`) // Adiciona o cabeçalho de autenticação
