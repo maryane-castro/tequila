@@ -196,9 +196,6 @@ O **Flask** é usado para criar a API e os endpoints de previsão e saúde. Quan
 O modelo **YOLOv5** foi treinado e salvo no arquivo `best.pt`. Ele é carregado assim que a aplicação é iniciada. O modelo faz a detecção e classificação da imagem enviada.
 
 
-Ah, entendi! Você quer apenas adicionar informações sobre como acessar e usar a documentação Swagger sem precisar configurar o Swagger no código, já que já está implementado. Aqui está a versão atualizada do seu README com a seção sobre o Swagger:
-
----
 
 ## 📡 Documentação da API com Swagger
 
