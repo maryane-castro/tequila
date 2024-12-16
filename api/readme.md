@@ -1,8 +1,6 @@
-Aqui está um **README** detalhado e explicativo para o seu projeto Flask, com base na estrutura de arquivos fornecida:
 
----
 
-# 🚀 API de Previsão com YOLOv5 - Projeto Tequila 🤖
+# 🚀 API de Previsão com YOLOv5 🤖
 
 Este projeto implementa uma API baseada no **Flask** que permite fazer previsões sobre imagens enviadas via requisição HTTP. O modelo de **classificação de imagens YOLOv5** foi treinado para detectar se uma imagem contém uma classe "aberta" ou "fechada". A API também suporta autenticação básica para garantir a segurança ao utilizar os endpoints.
 
