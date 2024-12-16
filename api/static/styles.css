@@ -41,7 +41,7 @@ h1 {
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 8px;
 }
 
 /* Estilo do label */
@@ -177,6 +177,24 @@ body.dark-mode #result {
 body.dark-mode #result strong {
     color: #4CAF50;
 }
+
+
+button#theme-toggle {
+    position: absolute; /* Permite posicionamento personalizado */
+    top: 20px; /* Distância do topo da página */
+    left: 20px; /* Distância da borda esquerda */
+    background: #77777750;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333; /* Cor padrão */
+    transition: color 0.3s ease;
+}
+
+button#theme-toggle:hover {
+    color: #4CAF50; /* Cor ao passar o mouse */
+}
+
 
 /* Responsividade para telas pequenas */
 @media (max-width: 600px) {

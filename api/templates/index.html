@@ -13,7 +13,18 @@
         <!-- Botão para alternar o tema -->
         <button id="theme-toggle">🌞</button>
 
-        <form id="upload-form" action="#" method="POST" enctype="multipart/form-data">
+        <form id="upload-form" method="POST" enctype="multipart/form-data">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" placeholder="Digite seu usuário" required><br><br>
+            
+            <label for="password">Senha:</label>
+            <div style="display: flex; align-items: center;">
+                <input type="password" id="password" name="password" placeholder="Digite sua senha" required style="flex: 1; margin-right: 10px;">
+                <input type="checkbox" id="toggle-password" style="margin: 0;">
+                <label for="toggle-password" style="margin: 0;"></label>
+            </div>
+            <br>
+
             <label for="image">Selecione uma imagem:</label>
             <input type="file" name="image" id="image" required><br><br>
             <button type="submit">Enviar</button>
@@ -27,7 +38,7 @@
         </div>
 
         <!-- Barra de carregamento -->
-        <div id="loading" class="loading-bar">
+        <div id="loading" class="loading-bar" style="display: none;">
             <div class="loading-progress"></div>
         </div>
     </div>

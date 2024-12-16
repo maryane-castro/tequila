@@ -1,22 +1,45 @@
-import os
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, Response
 from flask_cors import CORS
 from tempfile import NamedTemporaryFile
 from ultralytics import YOLO
 from PIL import Image
 import os
+from functools import wraps
 
 app = Flask(__name__)
 
-# Habilitar CORS para o aplicativo inteiro
 CORS(app)
 
-# Carregar o modelo YOLO
 try:
-    model = YOLO("best.pt")  # Atualize com o caminho correto do seu modelo
+    model = YOLO("best.pt")  
 except Exception as e:
     print(f"Erro ao carregar o modelo YOLO: {e}")
     model = None
+
+USERNAME = os.getenv("API_USERNAME", "admin")
+PASSWORD = os.getenv("API_PASSWORD", "password123")
+
+def check_auth(username, password):
+    """Verifica se o nome de usuário e senha estão corretos."""
+    return username == USERNAME and password == PASSWORD
+
+def authenticate():
+    """Envia uma resposta 401 para solicitações não autenticadas."""
+    return Response(
+        'Autenticação necessária. Por favor, forneça as credenciais.',
+        401,
+        {'WWW-Authenticate': 'Basic realm="Login Required"'}
+    )
+
+def requires_auth(f):
+    """Decorador para proteger endpoints com autenticação básica."""
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        auth = request.authorization
+        if not auth or not check_auth(auth.username, auth.password):
+            return authenticate()
+        return f(*args, **kwargs)
+    return decorated
 
 def process_image(file):
     """
@@ -24,7 +47,7 @@ def process_image(file):
     """
     try:
         img = Image.open(file)
-        if img.mode == 'RGBA':  # Converte RGBA para RGB, se necessário
+        if img.mode == 'RGBA': 
             img = img.convert('RGB')
 
         with NamedTemporaryFile(delete=False, suffix=".jpg") as tmp_file:
@@ -42,6 +65,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
+@requires_auth
 def predict():
     """
     Endpoint para receber e processar uma imagem, retornando a predição.
@@ -51,15 +75,12 @@ def predict():
 
     file = request.files['image']
 
-    # Verifica se o arquivo é uma imagem válida
     if not file.content_type.startswith('image'):
         return jsonify({"error": "O arquivo enviado não é uma imagem válida"}), 400
 
     try:
-        # Salvar a imagem com seu nome original
         original_filename = file.filename
 
-        # Processa a imagem e realiza a predição
         image_path = process_image(file)
 
         if model is None:
@@ -67,7 +88,6 @@ def predict():
 
         results = model.predict(image_path)
 
-        # Processa o resultado
         result = results[0]
         class_names = result.names
         probs = result.probs.data.cpu().numpy()
@@ -75,13 +95,13 @@ def predict():
         predicted_class = class_names[predicted_class_idx]
         confidence = float(probs[predicted_class_idx])
 
-        # Mapeia as classes para nomes amigáveis
+        # Mapeia as classes para nomes
         class_mapping = {"open": "aberta", "close": "fechada"}
         result_mapped = class_mapping.get(predicted_class, "desconhecida")
 
         # Responde com o nome real da imagem e os dados de predição
         response = {
-            "image_name": original_filename,  # Usando o nome real da imagem
+            "image_name": original_filename,  # nome real da imagem
             "prediction": result_mapped,
             "confidence": confidence
         }
@@ -95,9 +115,21 @@ def predict():
         return jsonify({"error": f"Erro inesperado: {str(e)}"}), 500
 
     finally:
-        # Remove o arquivo temporário após o processamento
+        # remove o arquivo temporário após o processamento
         if os.path.exists(image_path):
             os.remove(image_path)
+
+
+@app.route('/health')
+def health_check():
+    """
+    Endpoint de saúde para verificar se a API está funcionando.
+    """
+    try:
+        # Simples verificação de saúde, apenas responde com 200 OK
+        return jsonify({"status": "ok"}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
 if __name__ == "__main__":
