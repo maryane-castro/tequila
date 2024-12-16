@@ -219,7 +219,7 @@ Na interface do Swagger, você poderá visualizar a descrição de cada endpoint
 
 ### 🎯 Como Usar o Swagger UI
 
-1. **Abrir o navegador** e acessar [http://localhost:5000/swagger](http://localhost:5000/apidocs).
+1. **Abrir o navegador** e acessar [http://localhost:5000/apidocs](http://localhost:5000/apidocs).
 2. **Escolher o endpoint desejado**: No Swagger UI, você verá todos os endpoints listados, como `POST /predict` ou `GET /health`.
 3. **Enviar uma requisição**: Para o endpoint `POST /predict`, por exemplo, você poderá fazer o upload de uma imagem diretamente pela interface e ver a previsão retornada em formato JSON.
 4. **Explorar mais funcionalidades**: O Swagger UI também oferece uma maneira de testar outros endpoints, ver as respostas de cada um e entender como a API funciona de maneira interativa.
