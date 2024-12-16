@@ -33,7 +33,7 @@ class TequilaApiUser(HttpUser):
                 files = {'image': (self.image_path, f, 'image/jpeg')}
                 
                 # Envia a requisição POST com autenticação básica
-                response = self.client.post("/predict", 
+                response = self.client.post("/classify", 
                                             headers=self.auth_header,  # Usando o cabeçalho de autenticação
                                             files=files)
 

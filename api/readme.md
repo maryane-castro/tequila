@@ -66,7 +66,7 @@ Se as variáveis de ambiente não forem configuradas, os valores padrão serão 
 
 ## 📡 Endpoints da API
 
-### 1. **POST /predict** - Predição de Imagem
+### 1. **POST /classify** - Predição de Imagem
 
 Este endpoint permite enviar uma imagem para fazer uma previsão de classe ("aberta" ou "fechada").
 
@@ -77,7 +77,7 @@ Este endpoint permite enviar uma imagem para fazer uma previsão de classe ("abe
 
 **Exemplo de requisição cURL:**
 ```bash
-curl -u admin:password123 -F "image=@/path/to/image.jpg" http://localhost:5000/predict
+curl -u admin:password123 -F "image=@/path/to/image.jpg" http://localhost:5000/classify
 ```
 
 **Resposta:**
@@ -85,13 +85,13 @@ A resposta será um JSON com os seguintes dados:
 ```json
 {
     "image_name": "image.jpg",
-    "prediction": "aberta",
+    "classifyion": "aberta",
     "confidence": 0.95
 }
 ```
 
 - **image_name**: Nome original da imagem enviada.
-- **prediction**: Classe prevista (aberta ou fechada).
+- **classifyion**: Classe prevista (aberta ou fechada).
 - **confidence**: Confiança da previsão.
 
 ### 2. **GET /health** - Verificação de Saúde
@@ -120,31 +120,31 @@ Claro! Aqui está a adição de um exemplo de requisição de predição via `cu
 
 ## 📡 Exemplo de Requisição via cURL
 
-### 1. **Predição de Imagem** (`POST /predict`)
+### 1. **Predição de Imagem** (`POST /classify`)
 
 Para fazer uma requisição de predição de imagem, você pode usar o comando `curl` conforme o exemplo abaixo.
 
 **Exemplo de requisição cURL:**
 ```bash
-curl -u admin:password123 -F "image=@/caminho/para/imagem.jpg" http://localhost:5000/predict
+curl -u admin:password123 -F "image=@/caminho/para/imagem.jpg" http://localhost:5000/classify
 ```
 
 **Explicação:**
 - `-u admin:password123`: Passa as credenciais de autenticação básica (substitua `admin` e `password123` conforme necessário).
-- `-F "image=@/caminho/para/imagem.jpg"`: Envia a imagem para o endpoint `/predict`. Substitua `/caminho/para/imagem.jpg` pelo caminho da sua imagem local.
-- `http://localhost:5000/predict`: URL do endpoint de predição da API.
+- `-F "image=@/caminho/para/imagem.jpg"`: Envia a imagem para o endpoint `/classify`. Substitua `/caminho/para/imagem.jpg` pelo caminho da sua imagem local.
+- `http://localhost:5000/classify`: URL do endpoint de predição da API.
 
 **Resposta esperada (em JSON):**
 ```json
 {
     "image_name": "imagem.jpg",
-    "prediction": "aberta",
+    "classifyion": "aberta",
     "confidence": 0.95
 }
 ```
 
 - **image_name**: Nome da imagem que foi enviada.
-- **prediction**: Classe prevista (exemplo: "aberta" ou "fechada").
+- **classifyion**: Classe prevista (exemplo: "aberta" ou "fechada").
 - **confidence**: Confiança da predição (valor entre 0 e 1).
 
 Este comando vai retornar uma resposta em formato JSON, com a previsão da classe e o nível de confiança para a imagem enviada.
@@ -184,9 +184,9 @@ Se você quiser fazer o deploy da aplicação no **Azure**, você pode usar o ar
 
 ### 🔨 Flask API
 
-O **Flask** é usado para criar a API e os endpoints de previsão e saúde. Quando uma imagem é enviada para o endpoint `/predict`, ela é processada e passada para o modelo YOLOv5 para inferência.
+O **Flask** é usado para criar a API e os endpoints de previsão e saúde. Quando uma imagem é enviada para o endpoint `/classify`, ela é processada e passada para o modelo YOLOv5 para inferência.
 
-1. A imagem é recebida no endpoint `/predict`.
+1. A imagem é recebida no endpoint `/classify`.
 2. A imagem é processada e salva como um arquivo temporário.
 3. O modelo YOLOv5 faz a previsão (aberta ou fechada) na imagem recebida.
 4. A resposta com o nome da classe prevista e a confiança é retornada.
@@ -211,17 +211,17 @@ http://localhost:5000/apidocs
 
 Isso abrirá a interface do Swagger, onde você verá todos os endpoints disponíveis na API, como:
 
-- **POST /predict**: Enviar uma imagem para fazer a previsão.
+- **POST /classify**: Enviar uma imagem para fazer a previsão.
 - **GET /health**: Verificar se a API está funcionando corretamente.
 - **GET /**: Acesso à página inicial para fazer o upload da imagem.
 
-Na interface do Swagger, você poderá visualizar a descrição de cada endpoint, os parâmetros necessários (como a imagem no endpoint `/predict`), e realizar as requisições diretamente pela interface, sem necessidade de usar ferramentas como `curl`.
+Na interface do Swagger, você poderá visualizar a descrição de cada endpoint, os parâmetros necessários (como a imagem no endpoint `/classify`), e realizar as requisições diretamente pela interface, sem necessidade de usar ferramentas como `curl`.
 
 ### 🎯 Como Usar o Swagger UI
 
 1. **Abrir o navegador** e acessar [http://localhost:5000/apidocs](http://localhost:5000/apidocs).
-2. **Escolher o endpoint desejado**: No Swagger UI, você verá todos os endpoints listados, como `POST /predict` ou `GET /health`.
-3. **Enviar uma requisição**: Para o endpoint `POST /predict`, por exemplo, você poderá fazer o upload de uma imagem diretamente pela interface e ver a previsão retornada em formato JSON.
+2. **Escolher o endpoint desejado**: No Swagger UI, você verá todos os endpoints listados, como `POST /classify` ou `GET /health`.
+3. **Enviar uma requisição**: Para o endpoint `POST /classify`, por exemplo, você poderá fazer o upload de uma imagem diretamente pela interface e ver a previsão retornada em formato JSON.
 4. **Explorar mais funcionalidades**: O Swagger UI também oferece uma maneira de testar outros endpoints, ver as respostas de cada um e entender como a API funciona de maneira interativa.
 
 

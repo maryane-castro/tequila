@@ -39,7 +39,7 @@ LOCUST_PASSWORD=password123
 LOCUST_IMAGE=1715279936313.jpg
 ```
 
-Essas variáveis são usadas pelo script `load_test.py` para acessar a API, autenticar e enviar a imagem para o endpoint `/predict`.
+Essas variáveis são usadas pelo script `load_test.py` para acessar a API, autenticar e enviar a imagem para o endpoint `/classify`.
 
 - **LOCUST_HOST**: URL da sua API (exemplo: `http://localhost:5000`).
 - **LOCUST_USERNAME**: Nome de usuário para autenticação básica (exemplo: `admin`).
@@ -73,7 +73,7 @@ Durante a execução do teste, o Locust irá exibir informações sobre o númer
 ### Exemplo de Saída:
 
 - **GET /health**: Exibe o status da API.
-- **POST /predict**: Envia uma imagem para o endpoint de predição da API.
+- **POST /classify**: Envia uma imagem para o endpoint de predição da API.
 
 Os dados de resposta incluirão informações como o tempo médio de resposta, o tempo mínimo e máximo, entre outras métricas.
 
