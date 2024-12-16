@@ -22,7 +22,7 @@ Se você deseja escalar para uma análise mais robusta e em larga escala, pode s
 
 ### 1.1. Navegar até a Pasta de Scripts 🗂️
 
-Antes de executar o Locust, você precisa estar dentro da pasta onde o arquivo `load_test.py` está localizado. Abra o terminal e navegue até a pasta `scripts`:
+Antes de executar o Locust, você precisa estar dentro da pasta onde o arquivo `locustfile.py` está localizado. Abra o terminal e navegue até a pasta `scripts`:
 
 ```bash
 cd /caminho/para/o/repositorio/scripts
@@ -39,7 +39,7 @@ LOCUST_PASSWORD=password123
 LOCUST_IMAGE=1715279936313.jpg
 ```
 
-Essas variáveis são usadas pelo script `load_test.py` para acessar a API, autenticar e enviar a imagem para o endpoint `/classify`.
+Essas variáveis são usadas pelo script `locustfile.py` para acessar a API, autenticar e enviar a imagem para o endpoint `/classify`.
 
 - **LOCUST_HOST**: URL da sua API (exemplo: `http://localhost:5000`).
 - **LOCUST_USERNAME**: Nome de usuário para autenticação básica (exemplo: `admin`).
@@ -53,7 +53,7 @@ Essas variáveis são usadas pelo script `load_test.py` para acessar a API, aute
 Com a pasta correta e o arquivo `.env` configurado, execute o comando para iniciar o teste de carga:
 
 ```bash
-locust -f load_test.py
+locust -f locustfile.py 
 ```
 
 ### 2.2. Acessar a Interface de Controle do Locust 🌐
